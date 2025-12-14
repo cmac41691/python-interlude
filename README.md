@@ -8,3 +8,13 @@ Focus areas include:
 - Logic drills and pattern recognition
 - Functions, loops, and small utilities
 - Clean code and consistent workflow (Git, VS Code)
+
+## Learning Philosophy
+
+This interlude is designed as a student–teacher exercise.
+I deliberately slow down to:
+- identify weak areas
+- articulate logic in pseudocode
+- reflect on mistakes and improvements
+
+The goal is long-term backend readiness, not speed.
