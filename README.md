@@ -18,3 +18,11 @@ I deliberately slow down to:
 - reflect on mistakes and improvements
 
 The goal is long-term backend readiness, not speed.
+
+## Pseudocode Standard
+
+All exercises and projects begin with a universal minimalistic pseudocode.
+The pseudocode is language-agnostic and translated directly into Python
+using a consistent mapping.
+
+This approach prioritizes logic clarity before syntax.
