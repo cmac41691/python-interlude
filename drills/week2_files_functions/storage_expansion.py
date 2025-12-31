@@ -10,7 +10,7 @@ def load_data():
             return json.load(file)
     else:
         return {
-            "total_sessions": 0,
+            "total_sessions": 0, 
             "last_action": "none"
         }
 
@@ -23,14 +23,20 @@ def save_data(data):
 data = load_data()
 
 while True:
-    user_input = input("Enter an action (or 'q' to quit): ")
+    command = input("Enter a command (view, update, q): ").strip().lower()
 
-    if user_input == "q" or user_input == "quit":
+    if command == "view":
+        print(data)
+
+    elif command == "update":
+        new_action = input("Enter new action: ").strip()
+        data["last_action"] = new_action
+        save_data(data)
+
+    elif command == "q":
         print("Exiting program")
         save_data(data)
         break
 
-    # update ONE field only
-    data["last_action"] = user_input
-
-    save_data(data)
+    else:
+        print("Unknown command")
