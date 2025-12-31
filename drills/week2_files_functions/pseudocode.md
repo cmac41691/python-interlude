@@ -17,16 +17,22 @@ END FUNCTION
 SET data = load_data()
 
 WHILE program is running
-    ASK user for input
+    ASK user for command (input)
 
-    IF input is "q" or "quit"
+    IF command is "view"
+        DISPLAY current stored data (print data)
+
+    ELSE IF command is "update"
+        ASK user for new action
+        UPDATE last_action with new action
+        SAVE data
+
+    ELSE IF command is "q" or "quit"
         DISPLAY exit message
         SAVE data
         EXIT loop
-    END IF
 
-    UPDATE last_action with user input
-    SAVE data
+    ELSE
+        DISPLAY "Unknown command"
 END WHILE
 
-END
