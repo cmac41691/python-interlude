@@ -1,23 +1,11 @@
-# Week 2 Reflection — Files & Functions (JSON Storage)
+## Week 2 Reflection — Files & Functions
 
-This week focused on persistent storage using files and JSON.
+This week I built a small CLI tool that uses JSON for persistent storage.
 
-I successfully implemented:
-- A `load_data()` function that checks if a file exists and loads JSON safely
-- A `save_data(data)` function that writes updated state back to disk
-- A `while True` loop that continuously accepts user input
-- A clean exit condition (`q` / `quit`)
-- Controlled updates to a single data field (`last_action`)
+Key takeaways:
+- I learned how to safely load data with a fallback when a file doesn’t exist.
+- I separated how data is stored from how it’s displayed to the user.
+- Using commands like `view`, `update`, and `q` helped me think in terms of backend control flow.
+- Writing pseudocode first made the Python implementation much easier to reason about.
 
-Key things I learned:
-- File existence checks (`os.path.exists`) are critical before reading
-- JSON acts like a lightweight database when combined with dictionaries
-- Separating read/write logic into functions makes the code easier to extend
-- Persistence changes how programs are designed compared to stateless scripts
-
-This code now forms a stable foundation for:
-- Viewing stored data
-- Expanding into a CLI menu
-- Tracking session counts or user actions over time
-
-Overall, this felt like real backend work rather than a toy exercise.
+This project helped me understand how backend programs manage state across sessions.
