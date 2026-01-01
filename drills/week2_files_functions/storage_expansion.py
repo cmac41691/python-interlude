@@ -10,7 +10,7 @@ def load_data():
             return json.load(file)
     else:
         return {
-            "total_sessions": 0, 
+            "total_sessions": 0,
             "last_action": "none"
         }
 
@@ -26,17 +26,21 @@ while True:
     command = input("Enter a command (view, update, q): ").strip().lower()
 
     if command == "view":
-        print(data)
+        print("\n=== Stored Data ===")
+        print(f"Total Sessions: {data['total_sessions']}")
+        print(f"Last Action: {data['last_action']}")
+        print("===================\n")
 
     elif command == "update":
         new_action = input("Enter new action: ").strip()
         data["last_action"] = new_action
         save_data(data)
+        print("Action updated.\n")
 
     elif command == "q":
-        print("Exiting program")
+        print("Exiting program.")
         save_data(data)
         break
 
     else:
-        print("Unknown command")
+        print("Unknown command.\n")

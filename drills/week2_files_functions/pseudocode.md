@@ -20,11 +20,13 @@ WHILE program is running
     ASK user for command (input)
 
     IF command is "view"
-        DISPLAY current stored data (print data)
+        DISPLAY formatted stored data
+            SHOW total_sessions
+            SHOW last_action
 
     ELSE IF command is "update"
         ASK user for new action
-        UPDATE last_action with new action
+        UPDATE last_action
         SAVE data
 
     ELSE IF command is "q" or "quit"
@@ -36,3 +38,4 @@ WHILE program is running
         DISPLAY "Unknown command"
 END WHILE
 
+END
