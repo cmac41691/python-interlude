@@ -1,12 +1,19 @@
 START
 
+DEFINE get_default_data
+    RETURN {
+        total_sessions: 0
+        last_action: "none"
+    }
+END FUNCTION
+
 DEFINE load_data()
     IF data file exists
         OPEN file
         READ JSON
         RETURN data
     ELSE
-        RETURN default data structure
+        RETURN get_default_data
 END FUNCTION
 
 DEFINE save_data(data)
