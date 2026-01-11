@@ -28,6 +28,23 @@ DEFINE view_contacts(contact_list)
 END FUNCTION
 
 
+DEFINE update_contact(contact_list)
+    ASK user for identifier (name, phone, or email)
+
+    FOR each contact in contact_list
+        IF contact matches identifier
+            ASK user for new name
+            ASK user for new phone
+            ASK user for new email
+
+            UPDATE contact fields
+            DISPLAY "Contact updated"
+            RETURN
+
+    DISPLAY "Contact not found"
+END FUNCTION
+
+
 DEFINE search_contact(contact_list)
     ASK user for name to search
 
@@ -57,7 +74,7 @@ DEFINE run_contact_manager
     SET contacts = empty list
 
     WHILE program is running
-        ASK user for command (add, view, search, delete, q)
+        ASK user for command (add, view, search, update, delete, q)
 
         IF command is "add"
             CALL add_contact
@@ -68,6 +85,9 @@ DEFINE run_contact_manager
         ELSE IF command is "search"
             CALL search_contact
 
+        ELSE IF command is "update"
+            CALL update_contact
+
         ELSE IF command is "delete"
             CALL delete_contact
 
@@ -76,6 +96,6 @@ DEFINE run_contact_manager
 
         ELSE
             DISPLAY "Unknown command"
-END WHILE
+    END WHILE
 
 END
