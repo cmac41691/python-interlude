@@ -10,3 +10,6 @@ I also practiced passing data structures (lists and dictionaries) between functi
 This project is helping me understand how larger programs are built from small, focused pieces.
 
 Next steps will be implementing the remaining contact operations (view, search, update, delete) and adding a main loop to connect everything together.  
+
+
+Implemented view_contacts after correcting logic errors around empty lists and dictionary access. Learned to check collection state (if not list) instead of invalid sentinel values and to format output using f-strings with dictionary keys.
