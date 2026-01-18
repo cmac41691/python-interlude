@@ -24,3 +24,24 @@ def view_contacts(contact_list):
             print(f"{contact['name']}, {contact['phone']}, {contact['email']}")  
 
 
+def update_contact(contact_list):
+    name_to_discover = input("Enter name to update: ")
+
+    for contact in contact_list:
+        if contact["name"] == name_to_discover:
+            new_name = input("New name: ")
+            new_phone = input("New phone: ")
+            new_email = input("New email: ")
+
+        
+            contact["name"] = new_name
+            contact["phone"] = new_phone
+            contact["email"] = new_email
+
+            print("Contact updated")
+            return  
+
+    print("Contact not found")
+    return
+
+
