@@ -45,3 +45,13 @@ def update_contact(contact_list):
     return
 
 
+def search_contact(contact_list):
+    search_name = input("Searching for contact information: ")
+
+    for contact in contact_list:
+        if contact["name"] == search_name:
+            print(f"{contact} has been found")
+            return
+
+    print("Contact Not Found")
+
