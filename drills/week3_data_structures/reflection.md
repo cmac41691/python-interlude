@@ -30,3 +30,16 @@ A key realization was that dictionaries inside lists are mutable, so updating th
 I also reinforced the importance of placing the "Contact not found" message *after* the loop, ensuring it only runs when no match is found.
 
 This function helped connect the upper-level logic (user commands) with lower-level data mutation and clarified how real programs manage state across multiple functions.
+
+
+
+
+## 2026-01-25 — Search & Update Logic Integration 
+
+Today I implemented and validated the search_contact function, completing the core CRUD workflow for the contact manager. This function reinforced the same search pattern used in update_contact: iterating through a list of dictionaries, comparing a specific key ("name") against user input, and handling control flow with early returns and a fallback case.
+
+A key takeaway was recognizing how consistent identifiers across functions simplify program design. By standardizing on "name" as the lookup key, the search and update logic remain aligned with how contacts are created and stored.
+
+I also practiced isolating logic by testing the function independently in an online compiler before integrating it into the main project. This helped confirm correctness without introducing noise from other parts of the system.
+
+This step further clarified how real programs manage state through shared data structures and how small, focused functions combine to form higher-level application behavior.
