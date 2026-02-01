@@ -41,7 +41,7 @@ def update_contact(contact_list):
             print("Contact updated")
             return  
 
-    print("Contact not found")
+    print("Contact not found")  
     return
 
 
@@ -55,3 +55,13 @@ def search_contact(contact_list):
 
     print("Contact Not Found")
 
+def delete_contact(contact_list):
+    delete_name = input("Enter name to delete: ")
+
+    for contact in contact_list:
+        if contact["name"] == delete_name:
+            contact_list.remove(contact)
+            print(f"Contact removed: {contact['name']}")
+            return
+
+    print("Contact not found")
