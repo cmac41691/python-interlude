@@ -43,3 +43,10 @@ A key takeaway was recognizing how consistent identifiers across functions simpl
 I also practiced isolating logic by testing the function independently in an online compiler before integrating it into the main project. This helped confirm correctness without introducing noise from other parts of the system.
 
 This step further clarified how real programs manage state through shared data structures and how small, focused functions combine to form higher-level application behavior.
+
+
+## 2026-02-01 — Delete Contact & CRUD Completion
+
+Implemented `delete_contact`, completing the core CRUD operations for the contact manager.  
+This reinforced safe list mutation patterns (removing items during iteration with early returns) and consistent identifier usage across search, update, and delete operations.  
+Testing the function in isolation helped confirm correct control flow before integration.
