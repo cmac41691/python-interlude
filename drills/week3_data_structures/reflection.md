@@ -50,3 +50,15 @@ This step further clarified how real programs manage state through shared data s
 Implemented `delete_contact`, completing the core CRUD operations for the contact manager.  
 This reinforced safe list mutation patterns (removing items during iteration with early returns) and consistent identifier usage across search, update, and delete operations.  
 Testing the function in isolation helped confirm correct control flow before integration.
+
+## 2026-02-03 — Contact Manager Control Loop Integration
+
+Integrated the `run_contact_manager` control loop, connecting all CRUD functions into a single interactive CLI workflow. This step unified previously isolated functions under a shared state (`contacts`) and reinforced how higher-level application flow coordinates lower-level logic.
+
+Key takeaways:
+- Managing shared state through explicit function arguments avoids hidden dependencies
+- Normalizing user input simplifies command handling
+- Early returns inside CRUD functions keep control flow predictable
+- Building and validating each function independently made final integration straightforward
+
+This marked a shift from writing individual features to assembling a complete, functioning system.  
