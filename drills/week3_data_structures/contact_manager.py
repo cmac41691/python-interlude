@@ -65,3 +65,33 @@ def delete_contact(contact_list):
             return
 
     print("Contact not found")
+
+def run_contact_manager():
+    contacts = []
+
+    while True:
+        command = input(
+            "add, view, search, update, delete, q: "
+        ).strip().lower() 
+
+        if command == "add":
+            add_contact(contacts)
+
+        elif command == "view":
+            view_contacts(contacts)
+
+        elif command == "search":
+            search_contact(contacts)
+
+        elif command == "update":
+            update_contact(contacts)
+
+        elif command == "delete":
+            delete_contact(contacts)
+
+        elif command == "q":
+            break
+
+        else:
+            print("Unknown command")
+
