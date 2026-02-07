@@ -62,3 +62,15 @@ Key takeaways:
 - Building and validating each function independently made final integration straightforward
 
 This marked a shift from writing individual features to assembling a complete, functioning system.  
+
+## 2026-02-07 — Contact Manager Modular Refactor
+
+This session focused on refactoring the contact manager from a single-file script into a small, modular CLI application. The goal was not to add new features, but to reorganize existing, working code without breaking behavior.
+
+Key takeaways:
+- Splitting logic across `contact.py`, `operations.py`, and `cli.py` clarified responsibilities and reduced cognitive load
+- Treating the CLI as an entry point reinforced the separation between user interaction and business logic
+- Passing shared state explicitly (contact lists) avoided hidden dependencies and globals
+- Verifying functionality *after* refactoring confirmed that structure can change independently of behavior
+
+This refactor marked a shift from “getting things to work” toward writing code that is easier to reason about, test, and extend. The project now resembles a small but realistic backend-style application rather than a learning script. 
