@@ -28,14 +28,14 @@ while True:
         break
 
     if command in commands:
-        modified = commands[command](data)
+        modified = commands[command]["handler"](data, commands)
         if modified:
             data_modified = True
     else:
         print("Unknown command.")
 
 if data_modified:
-    print("Data modified. Saving before shutdown...")
+    print("Data modified. Saving before shutdown...")  
     save_data(data)
 
 print("Shutting down cleanly.")
