@@ -81,3 +81,6 @@ venv.bak/
 
 # macOS system files
 .DS_Store
+
+# CLI runtime state
+data.json
