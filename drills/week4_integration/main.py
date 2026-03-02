@@ -1,8 +1,6 @@
 from persistence import load_data, save_data
 from commands import commands
 
-data = load_data()
-data_modified = False
 
 def user_menu():
     print("\nAvailable commands:")
@@ -10,32 +8,40 @@ def user_menu():
         print("-", cmd)
     print("- quit")
 
-user_menu()
 
-print("Welcome to the CLI")
-print('The commands that are available: "help", "update", "quit"')
+def main():
+    data = load_data()
+    data_modified = False
 
-while True:
-    command = input('Please input a command (type "quit" to exit): ') \
-        .strip() \
-        .lower()
+    user_menu()
 
-    if command == "":
-        print("Error: command cannot be empty.")       
-        continue
+    print("Welcome to the CLI")
 
-    if command in ("q", "quit"):
-        break
+    while True:
+        command = input('Please input a command (type "quit" to exit): ') \
+            .strip() \
+            .lower()
 
-    if command in commands:
-        modified = commands[command]["handler"](data, commands)
-        if modified:
-            data_modified = True
-    else:
-        print("Unknown command.")
+        if command == "":
+            print("Error: command cannot be empty.")
+            continue
 
-if data_modified:
-    print("Data modified. Saving before shutdown...")  
-    save_data(data)
+        if command in ("q", "quit"):
+            break
 
-print("Shutting down cleanly.")
+        if command in commands:
+            modified = commands[command]["handler"](data, commands)
+            if modified:
+                data_modified = True
+        else:
+            print("Unknown command.")
+
+    if data_modified:
+        print("Data modified. Saving before shutdown...")
+        save_data(data)
+
+    print("Shutting down cleanly.")
+
+
+if __name__ == "__main__":
+    main()
